@@ -1,3 +1,5 @@
 #!/bin/bash
 
-openssl rand -hex 32 | tr -d "\n" > "/tmp/jwtsecret"
+mkdir -p /var/lib/ethereum/
+
+openssl rand -hex 32 | tr -d "\n" > "/var/lib/ethereum/jwtsecret"

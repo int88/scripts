@@ -1,7 +1,9 @@
 #!/bin/bash
 
+NETWORK=sepolia
+
 # Start geth
-geth --goerli \
+geth --$NETWORK \
      --http \
      --datadir /var/lib/goethereum \
      --metrics \
