@@ -1,15 +1,17 @@
 #!/bin/bash
 
-NETWORK=sepolia
+NETWORK=mainnet
 LOGLEVEL=trace
 CHECKPOINT_URL=https://checkpoint-sync.sepolia.ethpandaops.io
 
 if [ "$NETWORK" == "goerli" ]; then
-	CHECKPOINT_URL = https://prater.checkpoint.sigp.io
+	CHECKPOINT_URL=https://prater.checkpoint.sigp.io
+elif [ "$NETWORK" == "mainnet" ]; then
+	CHECKPOINT_URL=https://mainnet.checkpoint.sigp.io
 fi
 
 lighthouse bn \
-  --network sepolia  \
+  --network $NETWORK  \
   --debug-level $LOGLEVEL \
   --datadir /var/lib/lighthouse \
   --http \
